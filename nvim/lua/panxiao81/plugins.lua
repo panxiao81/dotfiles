@@ -88,6 +88,8 @@ return require('packer').startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- Github Copilot
+  -- Use Offical Plugin to login
+  -- use "github/copilot.vim"
   use {
     "zbirenbaum/copilot.lua",
     event = {"VimEnter"},
@@ -113,7 +115,12 @@ return require('packer').startup(function(use)
         require'alpha'.setup(require'alpha.themes.startify'.config)
     end
 }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
+  use {"akinsho/toggleterm.nvim", tag = '*'}
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
