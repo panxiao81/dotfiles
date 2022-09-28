@@ -83,7 +83,7 @@ return require('packer').startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use 'nvim-telescope/telescope-media-files.nvim'
   -- Yaml Autodetaction
-  -- use { "someone-stole-my-name/yaml-companion.nvim", config = function() require("telescope").load_extension("yaml_schema") end }
+  use { "someone-stole-my-name/yaml-companion.nvim"}
 
   use "lewis6991/gitsigns.nvim"
 
