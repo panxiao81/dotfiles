@@ -1,6 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
 autoload -Uz compinit
 compinit
 
@@ -30,6 +27,7 @@ zinit light-mode for \
 # starship theme
 zinit ice as"command" from"gh-r" atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" atpull "%atclone" src "init.zsh" 
 zinit light starship/starship
+zinit light starship/starship
 # Plugin history-search-multi-word loaded with investigating.
 zinit light zdharma-continuum/history-search-multi-word
 
@@ -44,25 +42,13 @@ zi ice from"gh-r" as "program"
 zi light junegunn/fzf
 
 export ZSH_DISABLE_COMPFIX=true
-export DISPLAY=:0
-export PATH="${PATH}:${HOME}/.krew/bin"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/mc mc
 
 export GPG_TTY=$(tty)
 
-export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
-export PATH="/usr/local/opt/qt@5/bin:$PATH"
-export PATH="/usr/local/opt/riscv-gnu-toolchain/bin:$PATH"
-export PATH="/usr/local/opt/node/bin:$PATH"
-
-source "$HOME/.cargo/env"
-
-export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
