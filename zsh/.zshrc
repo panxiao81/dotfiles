@@ -38,6 +38,8 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice blockf
 zinit light zsh-users/zsh-completions
 
+zinit light zpm-zsh/ls
+
 zi ice from"gh-r" as "program"
 zi light junegunn/fzf
 
@@ -48,7 +50,7 @@ complete -o nospace -C /usr/local/bin/mc mc
 
 export GPG_TTY=$(tty)
 
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
