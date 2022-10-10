@@ -12,4 +12,4 @@ require 'panxiao81/gitsigns'
 require 'panxiao81/indentline'
 require 'panxiao81/statusline'
 require 'panxiao81/toggleterm'
-require 'panxiao81/null-ls'
+
