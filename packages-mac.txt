@@ -1,0 +1,14 @@
+stow
+iproute2mac
+wget
+cmake
+coreutils
+findutils
+fzf
+gdb
+neovim
+ripgrep
+tmux
+tree-sitter
+xquartz
+
