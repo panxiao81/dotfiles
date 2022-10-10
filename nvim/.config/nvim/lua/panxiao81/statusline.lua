@@ -1,2 +1,11 @@
-require("lualine").setup()
+require("lualine").setup {
+  options = {
+
+    extensions = { 
+      "nvim-tree",
+      "toggleterm",
+    },
+  }
+
+}
 
