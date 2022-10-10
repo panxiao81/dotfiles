@@ -1,0 +1,3 @@
+nerd-fonts-sarasa-mono
+visual-studio-code-bin
+google-chrome

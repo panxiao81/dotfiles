@@ -53,7 +53,16 @@ function main() {
   if [ $OS = "ubuntu" ]; then
     ./repo-ubuntu.sh
   fi
+  if [ $OS = "arch" ]; then
+      if ! grep -q "archlinuxcn" /etc/pacman.conf /etc/pacman.d/*; then
+      echo "[archlinuxcn]
+Server = https://repo.archlinuxcn.org/\$arch" | sudo tee -a /etc/pacman.conf
+      fi
+  fi
   xargs $PACKAGE < packages-$OS.txt
+  if command -v yay > /dev/null; then
+      cat ./packages-aur.txt | xargs yay -Sy
+  fi
 
   install_nvm
 }
