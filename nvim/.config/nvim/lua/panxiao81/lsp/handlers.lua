@@ -97,11 +97,11 @@ end
 
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
-    if client.resolved_capabilities then
-        client.resolved_capabilities.document_formatting = false
-    end
     if client.server_capabilities then
         client.server_capabilities.documentFormattingProvider = false
+    end
+   else if client.resolved_capabilities then
+        client.resolved_capabilities.document_formatting = false
     end
   end
   lsp_keymaps(bufnr)
@@ -115,6 +115,6 @@ if not status_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M

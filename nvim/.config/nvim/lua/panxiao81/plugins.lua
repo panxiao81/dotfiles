@@ -122,6 +122,13 @@ return require('packer').startup(function(use)
 
   use {"akinsho/toggleterm.nvim", tag = '*'}
 
+-- null-ls
+use {
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  }
+
+
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
