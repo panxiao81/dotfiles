@@ -115,6 +115,11 @@ if not status_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+if cmp_nvim_lsp.default_capabilities then
+    M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+else
+    M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+end
+
 
 return M
