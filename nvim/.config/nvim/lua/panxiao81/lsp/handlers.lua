@@ -99,8 +99,7 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     if client.server_capabilities then
         client.server_capabilities.documentFormattingProvider = false
-    end
-   else if client.resolved_capabilities then
+    elseif client.resolved_capabilities then
         client.resolved_capabilities.document_formatting = false
     end
   end
