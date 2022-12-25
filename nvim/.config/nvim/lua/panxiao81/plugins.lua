@@ -49,6 +49,8 @@ return require('packer').startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "jghauser/mkdir.nvim" -- Create directories from within Neovim
   use "lukas-reineke/indent-blankline.nvim"
+  use "windwp/nvim-autopairs"
+  use 'lewis6991/impatient.nvim'
 
   use {
     'kyazdani42/nvim-tree.lua',
@@ -77,7 +79,14 @@ return require('packer').startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+-- null-ls
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -121,14 +130,6 @@ return require('packer').startup(function(use)
   }
 
   use {"akinsho/toggleterm.nvim", tag = '*'}
-
--- null-ls
-use {
-    "jose-elias-alvarez/null-ls.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
-  }
-
-
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
